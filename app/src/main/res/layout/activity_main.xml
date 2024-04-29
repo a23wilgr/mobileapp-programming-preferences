@@ -41,10 +41,10 @@
         android:text="Button"
         tools:layout_editor_absoluteX="163dp"
         tools:layout_editor_absoluteY="293dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
+        android:layout_marginTop="10dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
