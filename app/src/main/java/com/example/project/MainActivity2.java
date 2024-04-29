@@ -33,6 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
         prefTextRef=(TextView)findViewById(R.id.textView2);
         prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
     }
+
     public void savePref(View v){
         // Get the text
         EditText newPrefText=new EditText(this);
@@ -50,4 +51,5 @@ public class MainActivity2 extends AppCompatActivity {
         // Clear the EditText
         newPrefText.setText("");
     }
+
 }
