@@ -49,7 +49,6 @@ public class MainActivity2 extends AppCompatActivity {
         TextView prefTextRef=new TextView(this);
         prefTextRef=(TextView)findViewById(R.id.textView2);
         prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
-        Log.d("Hej", myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
 
         // Clear the EditText
         newPrefText.setText("");

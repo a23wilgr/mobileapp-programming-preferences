@@ -1,39 +1,34 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Till början har en ny layout gjorts, med editText, button och textView, och en activity_main2 har skapats.
+I editText på den andra sidan, visas det i textView vad som skrivits in efter man tryckt på knappen som skickar texten.
+Det som har skrivits in i editText ska även synas på första sidan. 
 
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+I första kodsnutten kan vi se att att editText startas igång, och det som skrivs in sparas i myPreferenceEditor. Texten som skrivs in skickas iväg och sparas efter en kanpp har klickats på,
+och skickar då iväg texten som skrivits i editText till textviewn i MainActivity2. Detta skickas sedan vidare till en on resume i MainActivity, som tar emot det som skrivits in
+och visar det i sin textView.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
+   public void savePref(View v){
+        EditText newPrefText=new EditText(this);
+        newPrefText=(EditText)findViewById(R.id.settingseditview);
+
+        myPreferenceEditor.putString("MyAppPreferenceString", newPrefText.getText().toString());
+        myPreferenceEditor.apply();
+
+        TextView prefTextRef=new TextView(this);
+        prefTextRef=(TextView)findViewById(R.id.textView2);
+        prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
+
+        newPrefText.setText("");
     }
-}
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](screen1.png)
+![](screen2.png)
 
 Läs gärna:
 
