@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +20,8 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Toolbar toolbar2 = findViewById(R.id.toolbar2);
 
-        myPreferenceRef = getPreferences(MODE_PRIVATE);
+        myPreferenceRef = getSharedPreferences("MyAppPreferenceString", MODE_PRIVATE);
+
         myPreferenceEditor = myPreferenceRef.edit();
 
         TextView textView2 = findViewById(R.id.textView2);
@@ -47,6 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
         TextView prefTextRef=new TextView(this);
         prefTextRef=(TextView)findViewById(R.id.textView2);
         prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
+        Log.d("Hej", myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
 
         // Clear the EditText
         newPrefText.setText("");
